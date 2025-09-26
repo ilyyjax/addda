@@ -1,0 +1,124 @@
+:root{
+  --bg:#0b1020;
+  --card:#0f1724;
+  --muted:#9aa4bd;
+  --glass: rgba(255,255,255,0.04);
+  --accent: #ff6b6b;
+  --gap: 16px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg, #071026 0%, #0b1020 100%);
+  color:#e6eef8;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding-bottom:60px;
+}
+
+/* Header */
+.site-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 24px;
+  gap:12px;
+  border-bottom:1px solid rgba(255,255,255,0.03);
+  position:sticky;
+  top:0;
+  background:linear-gradient(180deg, rgba(3,6,15,0.8), rgba(3,6,15,0.6));
+  backdrop-filter: blur(6px);
+  z-index:50;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.brand h1{font-size:18px;margin:0;letter-spacing:0.6px}
+.mini-crewmate{width:28px;height:28px;border-radius:8px;position:relative;background:linear-gradient(180deg,#ff6b6b,#ff4a4a);box-shadow:0 6px 12px rgba(0,0,0,0.6)}
+.mini-crewmate::after{
+  content:""; position:absolute; right:-6px; top:6px; width:12px; height:18px; border-radius:6px; background:rgba(0,0,0,0.12);
+  transform:rotate(-12deg)
+}
+nav{display:flex;gap:10px;align-items:center}
+nav input{padding:8px 10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--muted);width:220px}
+nav button{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;color:var(--muted);cursor:pointer}
+
+/* Hero */
+.hero{padding:32px 24px 6px 24px}
+.hero h2{margin:0 0 8px 0;font-size:22px}
+.hero p{margin:0;color:var(--muted)}
+
+/* Grid */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fill,minmax(180px,1fr));
+  gap:var(--gap);
+  padding:18px 24px 40px 24px;
+}
+
+/* Card */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.03);
+  padding:14px;
+  border-radius:14px;
+  display:flex;
+  gap:12px;
+  align-items:center;
+  transition:transform .18s ease, box-shadow .18s ease;
+  cursor:pointer;
+  position:relative;
+  overflow:visible;
+}
+.card:hover{transform:translateY(-6px); box-shadow:0 12px 30px rgba(2,6,23,0.6)}
+.crewmate-wrap{width:84px;height:72px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.crewmate{
+  width:72px;height:52px;position:relative;border-radius:20px 20px 18px 18px;background:linear-gradient(180deg,#ddd,#bbb);
+  box-shadow: inset -6px -10px 24px rgba(0,0,0,0.25);
+  transform:translateY(6px);
+}
+/* visor */
+.crewmate::after{
+  content:""; position:absolute; left:16px; top:10px; width:36px; height:22px; border-radius:10px; background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.85)); transform:skewX(-6deg); box-shadow: 0 6px 14px rgba(0,0,0,0.5);
+}
+/* backpack */
+.crewmate::before{
+  content:""; position:absolute; right:-8px; top:12px; width:18px; height:34px; border-radius:6px; background:rgba(0,0,0,0.08)
+}
+
+.card-info{flex:1}
+.name{font-weight:700;margin:0 0 6px 0}
+.muted{color:var(--muted);font-size:13px;margin:0}
+
+/* color swatches for dynamic color */
+.crewmate.color-0{ background: linear-gradient(180deg,#ff6b6b,#ff4a4a) }
+.crewmate.color-1{ background: linear-gradient(180deg,#6bffb2,#2dd58f) }
+.crewmate.color-2{ background: linear-gradient(180deg,#6bb3ff,#3077ff) }
+.crewmate.color-3{ background: linear-gradient(180deg,#f5b86b,#f58f31) }
+.crewmate.color-4{ background: linear-gradient(180deg,#b86bff,#7b4bff) }
+.crewmate.color-5{ background: linear-gradient(180deg,#6bffd6,#3fe5b6) }
+
+/* trait pill */
+.pill{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--glass);font-size:12px;color:var(--muted);margin-right:6px;margin-top:8px}
+
+/* Modal */
+.modal{position:fixed;inset:0;display:grid;place-items:center;background:rgba(3,6,15,0.6);backdrop-filter:blur(6px);z-index:100}
+.modal.hidden{display:none}
+.modal-card{width:min(920px,95%);background:linear-gradient(180deg,#0d1220,#071026);border-radius:14px;padding:18px;display:flex;gap:20px;align-items:flex-start;box-shadow:0 30px 80px rgba(0,0,0,0.6)}
+.modal-art{width:44%;display:flex;align-items:center;justify-content:center}
+.modal-info{width:56%}
+.modal-info h3{margin:0 0 10px 0}
+.modal-info p{color:var(--muted);margin:0 0 12px 0}
+.traits{display:flex;flex-wrap:wrap;gap:8px}
+.close{position:absolute;right:28px;top:22px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);padding:6px 8px;border-radius:8px;cursor:pointer}
+
+/* Footer */
+.site-footer{position:fixed;left:0;right:0;bottom:0;padding:10px 14px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));text-align:center;color:var(--muted);font-size:13px}
+
+/* small screens */
+@media (max-width:700px){
+  .modal-card{flex-direction:column}
+  .modal-art, .modal-info{width:100%}
+  nav input{display:none}
+}
