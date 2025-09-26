@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Degens — Among Us Style</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="mini-crewmate"></div>
+      <h1>Degens • Crew</h1>
+    </div>
+    <nav>
+      <button id="randomize">Randomize</button>
+      <input id="search" placeholder="Search name or trait..." />
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Pick a crewmate — see their vibes</h2>
+      <p>Hover cards, click for details. Made in Among-Us style (original CSS shapes).</p>
+    </section>
+
+    <section id="grid" class="grid"></section>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-card">
+      <button class="close" id="closeModal">✕</button>
+      <div id="modalArt" class="modal-art"></div>
+      <div id="modalInfo" class="modal-info">
+        <h3 id="mName">Crewmate</h3>
+        <p id="mDesc"></p>
+        <div class="traits" id="mTraits"></div>
+        <div class="modal-actions">
+          <button id="fav">Favorite</button>
+          <a id="profileLink" class="link" href="#" target="_blank">View profile</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <small>Built for fun — among-us style crewmates gallery</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
